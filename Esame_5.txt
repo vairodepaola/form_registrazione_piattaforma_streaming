@@ -1,0 +1,41 @@
+Esame 5 Vairo De Paola
+
+"index.php" (si è utilizzato il .php per agevolare le future azioni lato server)
+
+
+Nella pagina principale viene chiesto di registrarsi con un form nel quale si deve inserire la mail e poi premere il
+pulsante "Registrati".
+Prima di passare la mail attraverso il "submit" del "form" con metodo "post" viene effettuato il controllo (con javascript,
+generato attraverso l'utilizzo di typescript (passaggio_email.ts) ) sul pattern del dato inserito: se il dato inserito non 
+è valido viene restituito un alert() contenente il "title" del relativo input.
+
+La mail fungerà da "username" per l'utente
+
+
+"registrazione.php" (si è utilizzato il .php anche per la lettura della mail inviata tramite metodo post da "index.php")
+
+
+Nella pagina vengono inseriti i principali dati dell'utente quali "Nome", "Cognome", "Sesso", "Data di nascita", 
+"Regione di residenza", "Provincia di residenza", "Via di residenza", "CAP", "Scegli la password", "Ripeti la password".
+Ogni campo presenta un controllo personalizzato (realizzato attraverso "controlli.ts").
+
+Per i campi di tipo "text" quali "Nome", "Cognome", "Regione di residenza", "Provincia di residenza", "Via di residenza", 
+"CAP" si verifica la lunghezza minima e massima (relativamente 3-30, 3-30, 3-30, 3-30, 3-40, 5) ed il pattern
+indicativamente di sole lettere per i nomi, accettati anche i numeri per la via in modo da includere il civico e accettati
+solo i numeri (5) per il CAP.
+
+Per il radiobutton viene verificato che uno dei due sia effettivamente selezionato.
+
+Per l'input field di tipo "date" si verifica che sia selezionata una data.
+
+Per "Scegli la password" si verifica la robustezza della password lasciando indicate le direttive per poterla generare 
+correttamente (8-20 caratteri, almeno 1 maiuscola, 1 minuscola, 1 numero, 1 carattere speciale).
+In caso di non superamento della verifica la direttiva viene evidenziata in rosso.
+
+Per "Ripeti la password" viene verificato che la password inserita sia identica a quella presente nel campo "Scegli la 
+password"
+
+
+Tutti gli errori nei campi vengono notificati con un alert() avente come contenuto il titolo assegnato agli input field 
+associati ed un contorno rosso attorno (i dati non corretti verranno azzerati mentre quelli corretti non verranno 
+modificati).
